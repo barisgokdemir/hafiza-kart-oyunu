@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="../agac/favicon.jpg" type="image/x-icon" />
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <div class="sideMenü">
+        <input type="button" class="Rbutton" value="Ana Menü" onclick="NewGame('../main.html');">
+        <input type="button" class="Rbutton" value="Sesi kapat/aç" onclick="mutedAudio();">
+
+    </div>
+    <div class="sizeMenu">Ekran Boyutu
+        <input type="button" class="sizeButton" value="2x" onclick="imgSize('size2x','spanSize2x');">
+        <input type="button" class="sizeButton" value="1.5x" onclick="imgSize('size15x','spanSize15x');">
+        <input type="button" class="sizeButton" value="1.3x" onclick="imgSize('size13x','spanSize13x');">
+        <input type="button" class="sizeButton" value="1x" onclick="imgSize('size1x','spanSize1x');">
+    </div>
+
+
+    <div class="state ">
+        <div class="point ">0</div>
+        <div class="time ">0:0</div>
+        <div class="guessCount ">10</div>
+    </div>
+
+    <div class="Result ">
+        <div class="Rstate ">kaybettiniz </br>tahmin hakkınız kalmadı</div>
+        <div class="Rskor ">00</div>
+        <div class="Rtime ">00:</div>
+
+        <input class="Rbutton " type="button " onclick="NewGame2(); " value="Yeniden Başlat ">
+        <input class="Rbutton " onclick="nextLevel(); " type="button " value="Sonraki Level ">
+    </div>
+
+
+    <!--   -->
+    <div class="game ">
+        <div class="row" data-row="row">
+            <div class="card "><img src="../agac/agac1.jpg ">
+                <span>1</span>
+            </div>
+            <div class="card "><img src="../agac/agac2.jpg ">
+                <span>2</span>
+            </div>
+            <div class="card "><img src="../agac/agac3.jpg ">
+                <span>3</span>
+            </div>
+            <div class="card "><img src="../agac/agac4.jpg ">
+                <span>4</span>
+            </div>
+            <div class="card "><img src="../agac/agac5.jpg ">
+                <span>5</span>
+            </div>
+        </div>
+        <div class="row" data-row="row">
+            <div class="card "><img src="../agac/agac1.jpg ">
+                <span>6</span>
+            </div>
+            <div class="card "><img src="../agac/agac2.jpg ">
+                <span>7</span>
+            </div>
+            <div class="card "><img src="../agac/agac3.jpg ">
+                <span>8</span>
+            </div>
+            <div class="card "><img src="../agac/agac4.jpg ">
+                <span>9</span>
+            </div>
+            <div class="card "><img src="../agac/agac5.jpg ">
+                <span>10</span>
+            </div>
+        </div>
+
+    </div>
+    <!--   Oyun Sesleri  -->
+    <audio id="correctMp3">       
+        <source src="../Sound/correct.mp3 " type="audio/mpeg ">
+    </audio>
+    <audio id="WinMp3">       
+        <source src="../Sound/mission-passed-sound.mp3 " type="audio/mpeg ">
+    </audio>
+    <audio id="LoseMp3">      
+        <source src="../Sound/bruh2.mp3 " type="audio/mpeg ">
+    </audio>
+    <!--   Oyun Sesleri  -->
+
+
+    <script src="app.js "></script>
+</body>
+
+</html>
