@@ -1,2 +1,1 @@
 main.html çalıştırabilirsiniz
-level klasorlerinin içindeki indexlerden çalıştırarak sunucuda sunmadan oyunu oynaya bilirsiniz
