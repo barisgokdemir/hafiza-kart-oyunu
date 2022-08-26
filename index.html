@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="agac/favicon.jpg" type="image/x-icon" />
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('./agac/wall2.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+        }
+        
+        .Rbutton {
+            border-radius: 10px;
+            background-color: rgba(14, 12, 12, 0.5);
+            color: white;
+            margin-top: 5px;
+            width: 110px;
+            height: 50px;
+            border: solid 5px black;
+            justify-content: baseline;
+            /*  align-items: center;*/
+        }
+        
+        .Rbutton:active {
+            background-color: rgba(1, 7, 17, 1);
+        }
+        
+        .container {
+            font-size: larger;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* align-items: center; */
+            margin: auto;
+            width: 300px;
+            height: 300px;
+            align-items: center;
+        }
+        
+        .spanGame {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="Menu">
+        <div class="container">
+            <span class="spanGame">Yeni Oyun Zorluk Seçiniz</span>
+            <input type="button" class="Rbutton" value="Kolay" onclick="NewGame('./level2x5/index.html');">
+            <input type="button" class="Rbutton" value="Orta" onclick="NewGame('./level4x5/index.html');">
+            <input type="button" class="Rbutton" value="Zor" onclick="NewGame('./level4x8/index.html');">
+        </div>
+    </div>
+
+    <script>
+        function NewGame(link) {
+            window.location.href = link;
+        }
+    </script>
+
+
+</body>
+
+</html>
+
