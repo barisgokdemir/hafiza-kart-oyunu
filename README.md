@@ -13,7 +13,7 @@ Agaç temali bölüm kolay seviyede 2x5 10 karttan oluşur içerisinde çeşitli
 Van gogh  temalı bölüm orta seviyede 4x5 20 kartan oluşur içerisinde Vincent Van Gogh eserlerini eşleştirisiniz ve vang gogh eserlerini tanımış olursunuz.
 Hayvan temalı bölüm zor seviyede 4x8 harita modunda 32 karttan oluşur içerisinde çeşitli hayvanlar ve bu hayvanların yavru resimleri mevcuttur.
 
-Kısa sürede tüm seviyeleri bitirebileceğiniz Eğlenceli ve Öğretici bir oyundur .
+Kısa sürede tüm seviyeleri bitirebileceğiniz Eğlenceli ve Öğretici bir oyundur.
 
 İyi Eğlenceler.
 
