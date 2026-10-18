@@ -1,0 +1,208 @@
+/* Hafıza Kart Oyunu - üç seviyenin ortak stili.
+   Seviyeler arasındaki tek fark renkler ve arka plan; bunlar body[data-tema] ile seçilir. */
+
+body[data-tema="agac"] {
+    --kart: rgba(65, 61, 61, 0.7);
+    --kenarlik: rgba(65, 61, 61, 1);
+    --sonuc-zemin: rgb(34, 29, 29);
+    --dugme: rgba(14, 12, 12, 0.5);
+    --metin: white;
+    background-image: url('../agac/tree3.webp');
+}
+
+body[data-tema="vangogh"] {
+    --kart: rgba(9, 32, 66, 0.7);
+    --kenarlik: rgba(9, 32, 66, 1);
+    --sonuc-zemin: rgb(9, 32, 66);
+    --dugme: rgba(9, 32, 66, 0.5);
+    --metin: whitesmoke;
+    background-image: url('../agac/wallVangogh.webp');
+}
+
+body[data-tema="hayvan"] {
+    --kart: rgba(65, 61, 61, 0.7);
+    --kenarlik: rgba(65, 61, 61, 1);
+    --sonuc-zemin: rgb(34, 29, 29);
+    --dugme: rgba(14, 12, 12, 0.5);
+    --metin: white;
+    background-image: url('../agac/wallafrica.webp');
+}
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+}
+
+.card {
+    font-size: large;
+    width: 100px;
+    height: 100px;
+    background-color: var(--kart);
+    margin: 10px;
+    flex-direction: row;
+    transition: 1s ease;
+    cursor: pointer;
+}
+
+.card:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
+
+.size2x {
+    width: 200px;
+    height: 200px;
+}
+
+.spanSize2x {
+    top: -120px;
+    left: 90px;
+}
+
+.size15x {
+    width: 150px;
+    height: 150px;
+}
+
+.spanSize15x {
+    top: -90px;
+    left: 67.5px;
+}
+
+.size13x {
+    width: 130px;
+    height: 130px;
+}
+
+.spanSize13x {
+    top: -78px;
+    left: 58.5px;
+}
+
+.size1x {
+    width: 100px;
+    height: 100px;
+}
+
+.spanSize1x {
+    top: -60px;
+    left: 45px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    visibility: hidden;
+    width: 100px;
+    height: 100px;
+}
+
+.state {
+    display: flex;
+    justify-content: center;
+}
+
+.point,
+.guessCount,
+.time {
+    margin: 10px;
+    border-radius: 15px;
+    border: solid 5px var(--kenarlik);
+    background-color: var(--kart);
+    font-size: xx-large;
+    color: white;
+    padding-top: 5px;
+    text-align: center;
+    width: 100px;
+    height: 45px;
+}
+
+.Result {
+    background-color: var(--sonuc-zemin);
+    border: solid 3px salmon;
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    left: 40%;
+    top: 90px;
+}
+
+.Rskor,
+.Rtime {
+    border-radius: 10px;
+    color: white;
+    padding-top: 30px;
+    border: solid 5px black;
+    background-color: var(--dugme);
+    text-align: center;
+    font-size: 35px;
+    height: 60px;
+}
+
+.Rstate {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+.Rrekor {
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    padding: 6px 4px;
+}
+
+.Rbutton {
+    border-radius: 10px;
+    background-color: var(--dugme);
+    color: white;
+    margin-top: 5px;
+    width: 110px;
+    border: solid 5px black;
+    cursor: pointer;
+}
+
+.Rbutton:active {
+    background-color: rgba(1, 7, 17, 1);
+}
+
+.Rbutton[hidden] {
+    display: none;
+}
+
+.sizeMenu {
+    position: absolute;
+    right: 0;
+    color: var(--metin);
+    font-weight: bold;
+}
+
+.sizeButton {
+    border-radius: 6px;
+    background-color: var(--dugme);
+    color: white;
+    margin-top: 5px;
+    width: 50px;
+    border: solid 3px black;
+    cursor: pointer;
+}
+
+span {
+    position: relative;
+    top: -60px;
+    left: 45px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.sideMenü {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+}
