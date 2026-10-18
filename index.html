@@ -3,19 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="agac/favicon.jpg" type="image/x-icon" />
-    <title>Document</title>
+    <title>Hafıza Kart Oyunu</title>
+    <meta name="description" content="Ağaçlar, Van Gogh tabloları ve hayvanlarla üç seviyeli hafıza kart oyunu.">
+    <link rel="icon" href="agac/favicon.png" type="image/png">
     <style>
         body {
-            background-image: url('./agac/wall2.jpg');
+            background-image: url('./agac/badem.webp');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
             margin: 0;
         }
-        
+
         .Rbutton {
             border-radius: 10px;
             background-color: rgba(14, 12, 12, 0.5);
@@ -24,28 +24,43 @@
             width: 110px;
             height: 50px;
             border: solid 5px black;
-            justify-content: baseline;
-            /*  align-items: center;*/
+            cursor: pointer;
         }
-        
+
         .Rbutton:active {
             background-color: rgba(1, 7, 17, 1);
         }
-        
+
         .container {
             font-size: larger;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            /* align-items: center; */
             margin: auto;
             width: 300px;
-            height: 300px;
+            min-height: 300px;
             align-items: center;
         }
-        
+
         .spanGame {
             color: white;
+            text-shadow: 0 1px 3px black, 0 0 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .gorunmez {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap;
+        }
+
+        .rekor {
+            min-height: 1.3em;
+            color: white;
+            font-size: 14px;
+            text-shadow: 0 1px 3px black, 0 0 8px rgba(0, 0, 0, 0.6);
         }
     </style>
 </head>
@@ -53,22 +68,38 @@
 <body>
 
     <div class="Menu">
+        <h1 class="gorunmez">Hafıza Kart Oyunu</h1>
         <div class="container">
             <span class="spanGame">Yeni Oyun Zorluk Seçiniz</span>
-            <input type="button" class="Rbutton" value="Kolay" onclick="NewGame('./level2x5/index.html');">
-            <input type="button" class="Rbutton" value="Orta" onclick="NewGame('./level4x5/index.html');">
-            <input type="button" class="Rbutton" value="Zor" onclick="NewGame('./level4x8/index.html');">
+            <input type="button" class="Rbutton" value="Kolay" data-seviye="level2x5">
+            <span class="rekor" data-rekor="level2x5"></span>
+            <input type="button" class="Rbutton" value="Orta" data-seviye="level4x5">
+            <span class="rekor" data-rekor="level4x5"></span>
+            <input type="button" class="Rbutton" value="Zor" data-seviye="level4x8">
+            <span class="rekor" data-rekor="level4x8"></span>
         </div>
     </div>
 
     <script>
-        function NewGame(link) {
-            window.location.href = link;
-        }
-    </script>
+        document.querySelectorAll('[data-seviye]').forEach(function (dugme) {
+            dugme.addEventListener('click', function () {
+                window.location.href = './' + dugme.dataset.seviye + '/index.html';
+            });
+        });
 
+        // Her seviyenin rekoru (ortak/oyun.js tarafından kaydedilir)
+        document.querySelectorAll('[data-rekor]').forEach(function (alan) {
+            var rekor = null;
+            try {
+                rekor = JSON.parse(localStorage.getItem('hafiza.rekor.' + alan.dataset.rekor));
+            } catch (e) { /* depolama yok */ }
+            if (!rekor) return;
+            alan.textContent = rekor.kazandi
+                ? 'Rekor: ' + Math.floor(rekor.sure / 60) + ':' + (rekor.sure % 60) + ' sürede'
+                : 'En iyi: ' + rekor.puan + ' puan';
+        });
+    </script>
 
 </body>
 
 </html>
-

@@ -1,0 +1,35 @@
+name: v1 arşivi
+
+# İlk sürüm (2021) için etiket ve Release oluşturur. Bir kez çalışır, sonra atlanır.
+# Release sayfasında GitHub'ın otomatik eklediği "Source code (zip)" ile v1 indirilebilir.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  v1-release:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ETIKET: v1.0
+      V1_COMMIT: 3aa67e6f1430a281ac9358a68320b7aabe964821
+    steps:
+      - uses: actions/checkout@v4
+      - name: Release yoksa oluştur
+        run: |
+          if gh release view "$ETIKET" >/dev/null 2>&1; then
+            echo "$ETIKET zaten var, atlanıyor."
+            exit 0
+          fi
+          cat > notlar.md <<'EOF'
+          Hafıza Kart Oyunu'nun 2021'de yazılan ilk sürümü, o günkü haliyle.
+
+          Aşağıdaki **Source code (zip)** bağlantısından indirip `main.html` dosyasını açarak oynayabilirsin.
+          Güncel sürüm için deponun ana sayfasına bak.
+          EOF
+          gh release create "$ETIKET" --target "$V1_COMMIT" --title "v1.0 - İlk sürüm (2021)" --notes-file notlar.md
