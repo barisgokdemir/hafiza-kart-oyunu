@@ -51,6 +51,7 @@ Yeni bir seviye eklemek için bir klasör açıp `index.html` içindeki `window.
   açılışı 11,5 MB'tan yaklaşık 0,4 MB'a indi
 - Üç seviyede tekrar eden kod (3 × ~380 satır JS ve 3 × ~250 satır CSS) tek motor ve tek stil dosyasında birleşti
 - Ses dosyaları kaldırıldı; sesler artık WebAudio ile kodda üretiliyor (lisans gerektiren dosya yok)
+- Ana menü arka planı, Van Gogh'un kamu malı "Badem Çiçekleri" tablosuyla değiştirildi
 - Her seviye için rekor tutuluyor, ana menüde gösteriliyor
 - Kartlar klavyeyle de açılabiliyor (Tab ile seç, Enter ile aç), görsellerde alternatif metin var
 - Düzeltmeler: zor seviyedeki "Sonraki Level" düğmesi var olmayan bir sayfaya gidiyordu (artık son seviyede
@@ -63,4 +64,7 @@ etiketinde duruyor; Release sayfasından ZIP olarak indirilebilir.
 
 ## Görseller
 
-Van Gogh tabloları kamu malıdır. Sesler bu projede kodla üretilmiştir.
+- Ana menü arka planı: Vincent van Gogh, *Badem Çiçekleri* (1890), Van Gogh Müzesi, Amsterdam.
+  Kamu malı; kaynak: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Amandelbloesem_-_s0176V1962_-_Van_Gogh_Museum.jpg)
+- Orta seviyedeki tablolar ve arka plan da Van Gogh eserleridir ve kamu malıdır.
+- Sesler bu projede kodla (WebAudio) üretilmiştir; ses dosyası kullanılmaz.
